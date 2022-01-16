@@ -1,4 +1,6 @@
-$(function() {
+$(document).ready(rock);
+
+function rock () {
   const $amenityCheck = {};
   $('input[type=checkbox]').change(function() {
     if ($(this).is(':checked')) {
@@ -9,4 +11,4 @@ $(function() {
     const names = Object.keys(amenityObj);
     $('.amenities h4').text(names.sort().join(', '));
   });
-})
+}
