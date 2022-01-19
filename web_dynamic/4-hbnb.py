@@ -5,7 +5,7 @@ from models.state import State
 from models.city import City
 from models.amenity import Amenity
 from models.place import Place
-from uuid import uuid4
+import uuid
 from os import environ
 from flask import Flask, render_template
 # app.jinja_env.trim_blocks = True
@@ -21,7 +21,7 @@ def close_db(error):
     """ Remove the current SQLAlchemy Session """
     storage.close()
 
-@app.route('/4-hbnb/', strict_slashes=False)
+@app.route('/4-hbnb/')
 def hbnb():
     """ HBNB is alive! """
     states = storage.all(State).values()
